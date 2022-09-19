@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on South37&#39;s Blog</title>
+    <link>https://south37.link/posts/</link>
+    <description>Recent content in Posts on South37&#39;s Blog</description>
+    <image>
+      <url>https://south37.link/papermod-cover.png</url>
+      <link>https://south37.link/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Feb 2021 12:00:00 +0900</lastBuildDate><atom:link href="https://south37.link/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mold の Build 手順メモ</title>
+      <link>https://south37.link/posts/20210228-build-mold/</link>
+      <pubDate>Sun, 28 Feb 2021 12:00:00 +0900</pubDate>
+      
+      <guid>https://south37.link/posts/20210228-build-mold/</guid>
+      <description>はじめに mold と呼ばれる高速なリンカを利用して Chromium を Build してみる という記事の中で、mold と呼ばれる「高速なリンカ」について紹介しました。
+https://github.com/rui314/mold
+mold は、自分の知る限りでは現時点では特に Binary の配信などは行っていないようです。利用したい場合には repository を git clone して、自分で Build して利用する必要があります。
+mold の Build 手順についてメモ程度に記録を残しておこうと思います。
+2021年3月20日追記: ちょうど4日ほど前に mold の README に How to build というセクションが追加されたようです。最新のソースコードで Build する場合は、そちらを参照してみてください。cf. https://github.com/rui314/mold#how-to-build
+ステップ1. mold のソースコードを取得する まず、mold の git repository を clone します。
+minami@chromium-dev-20210227:~$ git clone https://github.com/rui314/mold.git minami@chromium-dev-20210227:~$ ls mold minami@chromium-dev-20210227:~$ cd mold/ mold は自身が依存する mimalloc と oneTBB を git submodule として利用しているので、git submodule update --init を実行してこれらのソースコードを取得します。</description>
+    </item>
+    
+    <item>
+      <title>mold と呼ばれる高速なリンカを利用して Chromium を Build してみる</title>
+      <link>https://south37.link/posts/20210228-chromium-with-mold/</link>
+      <pubDate>Sun, 28 Feb 2021 06:00:00 +0900</pubDate>
+      
+      <guid>https://south37.link/posts/20210228-chromium-with-mold/</guid>
+      <description>はじめに 現在、広く使われているリンカの中でもっとも高速なものとして有名なのは LLVM project の LLD でしょう。LLD のパフォーマンスについては、公式 document に以下のような benchmark が掲載されていて、GNU ld, GNU gold などと比較して圧倒的に早いという結果が示されています。
+Program	| Output size | GNU ld	| GNU gold w/o threads | GNU gold w/threads | lld w/o threads | lld w/threads ffmpeg dbg	| 92 MiB | 1.72s | 1.16s	| 1.01s | 0.60s	| 0.35s mysqld dbg	| 154 MiB	| 8.50s | 2.96s	| 2.68s | 1.06s	| 0.68s clang dbg	| 1.</description>
+    </item>
+    
+    <item>
+      <title>kind (Kuberenetes in Docker) に deep dive してみる</title>
+      <link>https://south37.link/posts/20201230-kind/</link>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://south37.link/posts/20201230-kind/</guid>
+      <description>kuKubernetes の Install Tools というページでは、kubernetes を local で動かすための tool として kind が紹介されています。今日はこの kind について内部構造及び使い方を見てみます。
+kind とは kind は「Docker container の中で Kubernetes を動かすことが出来るツール」です。kind という命名は「Kubernetes in Docker」から来ていて、K-in-D という頭文字をとったものになっています。
+kind については KubeCon + CloudNativeCon で何度か紹介されているようです。例えば KubeCon + CloudNativeCon North America 2019 における以下の &amp;ldquo;Deep Dive: Kind&amp;rdquo; というトーク では、「kind とは何か？」について内部実装など含めて紹介されています。
+上記のトークについて簡単に summary を書くと、kind は以下のようなものとして紹介されています。
+Docker container として Node（をシミュレートする container）を動かし、その中で Kubernetes を動かすツール Node image の中に、Kubernetes を動かすために必要な全てを詰める kubelet kubeadm docker systemd core images (Kuberentes にとって重要な container image) etcd coredns pause kube-apiserver etc.</description>
+    </item>
+    
+    <item>
+      <title>BigQuery の内部実装の変遷について</title>
+      <link>https://south37.link/posts/20201228-bigquery/</link>
+      <pubDate>Mon, 28 Dec 2020 06:00:00 +0900</pubDate>
+      
+      <guid>https://south37.link/posts/20201228-bigquery/</guid>
+      <description>BigQuery（正確にはそのクエリエンジンである Dremel）の内部実装の変遷をまとめた以下のブログポストおよび論文を読みました。
+https://medium.com/google-cloud-jp/i-read-dremel-a-decade-of-interactive-sql-analysis-at-web-scale-ca2a015a522a
+https://research.google/pubs/pub49489/
+とても面白い内容で、Twitter にメモをポストしたのですが、後で参照しやすいようにブログにも同じ内容を載せておきます。
+BigQuery（正確にはそのクエリエンジンである Dremel）の内部実装の変遷をまとめた論文の解説ブログ。面白かった。https://t.co/s9UaH4MjBS
+&amp;mdash; south37/Nao Minami (@south37777) December 28, 2020 解説対象の論文は &amp;quot;Dremel: A Decade of Interactive SQL Analysis at Web Scale&amp;quot;。上記ブログポストでは 3 章の Disaggregation と 5 章の Serverless Computing をピックアップして解説していたが、より網羅的に知りたい場合 &amp;amp; 原文を読みたい場合はこちらを読むと良い。https://t.co/XolZ7fMXFY
+&amp;mdash; south37/Nao Minami (@south37777) December 28, 2020 以下、雑なメモ。まず前提として 2010 年の Dremel についての最初の論文である &amp;quot;Dremel: Interactive Analysis of Web-Scale Datasets&amp;quot; の 6 章 Query Execution は目を通しておくと良い。Dremel が Query をどう実行するかが説明されている。https://t.co/A98EC7oBqE
+&amp;mdash; south37/Nao Minami (@south37777) December 28, 2020 Dremel は「巨大なデータに対しての解析 query」である入力 query を「小さなデータに対しての解析 query」の集合に分解する。分解は 2010 年時点では tree の形で行われて、leaf query は storage からデータを読み取る形で実行される。中間 node は「child から集めたデータに対する query」を実行。</description>
+    </item>
+    
+    <item>
+      <title>手を動かして学ぶコンテナ標準 - Container Runtime 編</title>
+      <link>https://south37.link/posts/20201211-container-3/</link>
+      <pubDate>Fri, 11 Dec 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://south37.link/posts/20201211-container-3/</guid>
+      <description>コンテナ標準化の現状と Kubernetes の立ち位置について というブログではコンテナ標準の現状についてまとめてみました。
+また、手を動かして学ぶコンテナ標準 - Container Image と Container Registry 編 というブログでは Container Image と Container Registry について手を動かして学んでみました。
+このブログでは、runc, containerd などの Container Runtime について、実際に手を動かして学んでみたいと思います。
+なお、前回のブログ 同様、基本的にこのブログ内のコマンドは Linux で実行するものとします（自分は MacOS で Vagrant で Ubuntu VM を立てて実験してます）。
+runc を動かしてみる runc は Low-Level Container Runtime と呼ばれるもので、OCI Runtime Specification に準拠した CLI tool となっています。実際に runc を動かしてみることで、Container Runtime に対して理解を深めてみましょう。
+まず runc の install ですが、自分が試している ubuntu-20.04 では apt で install することができます。
+vagrant@vagrant:~$ sudo apt update -y vagrant@vagrant:~$ sudo apt install -y runc vagrant@vagrant:~$ which runc /usr/sbin/runc help を見てみると以下のような内容になっていて、container を操作するために必要な各種 subcommand が存在することがわかります。実は、これらの subcommand によって OCI Runtime Specification の Runtime and Lifecycle で定義された「Operations」 の機能が提供されています。ただし、見比べてみると分かりますが runc 自体はよりリッチな機能を提供しているようです。</description>
+    </item>
+    
+    <item>
+      <title>手を動かして学ぶコンテナ標準 - Container Image と Container Registry 編</title>
+      <link>https://south37.link/posts/20201210-container-2/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://south37.link/posts/20201210-container-2/</guid>
+      <description>先日は、コンテナ標準化の現状と Kubernetes の立ち位置について において、各種ドキュメントをベースにコンテナ標準についてまとめてみました。
+このブログでは、実際に tool などに触れて手を動かすことで、コンテナ標準についてさらに理解を深めてみたいと思います。
+なお、基本的にこのブログ内のコマンドは、Linux で実行するものとします（自分は MacOS で Vagrant で Ubuntu VM を立てて実験してます）。
+OCI Image の中身を見てみる skopeo と呼ばれる「container image に対して様々な操作を行えるツール」があります。このツールを利用することで、「docker image から OCI Image への変換」を行うことができます。このツールを利用して、実際に OCI Image の中身を見てみましょう。
+まず、以下のコマンドを実行して ruby:2.7.2-slim という docker image を oci:ruby-oci:2.7.2 という名前の OCI Image に変換します。
+vagrant@vagrant:~/oci-playground$ skopeo copy docker://ruby:2.7.2-slim oci:ruby-oci:2.7.2 Getting image source signatures Copying blob 852e50cd189d done Copying blob 6de4319615e2 done Copying blob 150eb06190d1 done Copying blob cf654ff9d9df done Copying blob 0a529f6cf42e done Copying config 3265430f5e done Writing manifest to image destination Storing signatures 上記コマンドを実行すると、ruby-oci という directory が出来ています。</description>
+    </item>
+    
+    <item>
+      <title>コンテナ標準化の現状と Kubernetes との関係性について</title>
+      <link>https://south37.link/posts/20201207-container-1/</link>
+      <pubDate>Mon, 07 Dec 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://south37.link/posts/20201207-container-1/</guid>
+      <description>コンテナ標準化が進んでいる事は知りつつも、標準化された仕様の具体的な内容についてはあまり知らない事に気づいたので、この機会に調べてみました。個人向けメモとして残しておきます。
+余力があれば、後でもう少し詳細をまとめる予定です（docker image を OCI Image Format に変換して眺めてみたり、runc や containerd などを実際に動かしてみたり、containerd や CRI-O などの Container Runtime の実装に目を通してみたりしたので、その辺りについてもいつかまとめたいと思ってます）。
+追記: 手を動かして調べた内容は以下の2つのブログにまとめました。
+手を動かして学ぶコンテナ標準 - Container Image と Container Registry 編 手を動かして学ぶコンテナ標準 - Container Runtime 編 以下、調査した内容をまとめたメモです。
+コンテナ標準と Open Container Initiative (OCI) について コンテナ標準は Open Container Initiative (OCI) と呼ばれる団体によって仕様策定が進められている。 image format, (low-level) runtime については既に標準が存在している（v1.0.0 をリリース済み）。distribution (container registry 周り) については仕様策定中の状態（2020年12月6日時点で GitHub の tag では v1.0.0-rc1 が出ている状態）。
+以下、 OCI が定める各種標準仕様について簡単にまとめる。
+OCI Image Format Specification Docker Image のような「container を記述する image format」の標準仕様。これは Docker Image の最新 format である Docker Image Manifest V2, Schema 2 をベースに標準化したもの。 以下が Docker 社からの公式声明。 Given this state of the world in late 2015, the OCI image specification work began in earnest with a strong group of collaborating independent and vendor-associated participants, using the Docker v2.</description>
+    </item>
+    
+  </channel>
+</rss>
