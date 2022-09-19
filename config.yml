@@ -1,0 +1,86 @@
+baseURL: 'https://south37.link/'
+languageCode: 'en-us'
+title: "South37's Blog"
+paginate: 5
+theme: "PaperMod"
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+
+minify:
+    disableXML: true
+    minifyOutput: true
+
+languages:
+    en:
+        languageName: "English"
+        weight: 1
+        taxonomies:
+          category: categories
+          tag: tags
+          series: series
+        menu:
+            main:
+                - name: Archive
+                  url: archives
+                  weight: 5
+                - name: Search
+                  url: search/
+                  weight: 10
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
+params:
+    env: production
+    description: "South37's Blog"
+    author: Nao Minami
+
+    defaultTheme: light
+    disableThemeToggle: true
+    ShowShareButtons: true
+    ShowReadingTime: true
+    disableSpecial1stPost: true
+    displayFullLangName: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowRssButtonInSectionTermList: true
+    ShowToc: true
+    comments: false
+    images: ["papermod-cover.png"]
+
+    homeInfoParams:
+        Title: "Nao Minami"
+        Content: >
+            Hi, there. I'm a software engineer who loves technology.
+
+    socialIcons:
+        - name: twitter
+          url: "https://twitter.com/south37777"
+        - name: github
+          url: "https://github.com/south37"
+        - name: linkedin
+          url: "https://www.linkedin.com/in/south37"
+        - name: Rss
+          url: "index.xml"
+
+    assets:
+        disableHLJS: true
+
+privacy:
+    twitter:
+        disabled: false
+        enableDNT: true
+
+    youtube:
+        disabled: false
+        privacyEnhanced: true
