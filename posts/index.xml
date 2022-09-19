@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on South37&#39;s Blog</title>
-    <link>https://south37.link/posts/</link>
+    <link>https://www.south37.link/posts/</link>
     <description>Recent content in Posts on South37&#39;s Blog</description>
     <image>
-      <url>https://south37.link/papermod-cover.png</url>
-      <link>https://south37.link/papermod-cover.png</link>
+      <url>https://www.south37.link/papermod-cover.png</url>
+      <link>https://www.south37.link/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Feb 2021 12:00:00 +0900</lastBuildDate><atom:link href="https://south37.link/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Feb 2021 12:00:00 +0900</lastBuildDate><atom:link href="https://www.south37.link/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mold の Build 手順メモ</title>
-      <link>https://south37.link/posts/20210228-build-mold/</link>
+      <link>https://www.south37.link/posts/20210228-build-mold/</link>
       <pubDate>Sun, 28 Feb 2021 12:00:00 +0900</pubDate>
       
-      <guid>https://south37.link/posts/20210228-build-mold/</guid>
+      <guid>https://www.south37.link/posts/20210228-build-mold/</guid>
       <description>はじめに mold と呼ばれる高速なリンカを利用して Chromium を Build してみる という記事の中で、mold と呼ばれる「高速なリンカ」について紹介しました。
 https://github.com/rui314/mold
 mold は、自分の知る限りでは現時点では特に Binary の配信などは行っていないようです。利用したい場合には repository を git clone して、自分で Build して利用する必要があります。
@@ -28,20 +28,20 @@ minami@chromium-dev-20210227:~$ git clone https://github.com/rui314/mold.git min
     
     <item>
       <title>mold と呼ばれる高速なリンカを利用して Chromium を Build してみる</title>
-      <link>https://south37.link/posts/20210228-chromium-with-mold/</link>
+      <link>https://www.south37.link/posts/20210228-chromium-with-mold/</link>
       <pubDate>Sun, 28 Feb 2021 06:00:00 +0900</pubDate>
       
-      <guid>https://south37.link/posts/20210228-chromium-with-mold/</guid>
+      <guid>https://www.south37.link/posts/20210228-chromium-with-mold/</guid>
       <description>はじめに 現在、広く使われているリンカの中でもっとも高速なものとして有名なのは LLVM project の LLD でしょう。LLD のパフォーマンスについては、公式 document に以下のような benchmark が掲載されていて、GNU ld, GNU gold などと比較して圧倒的に早いという結果が示されています。
 Program	| Output size | GNU ld	| GNU gold w/o threads | GNU gold w/threads | lld w/o threads | lld w/threads ffmpeg dbg	| 92 MiB | 1.72s | 1.16s	| 1.01s | 0.60s	| 0.35s mysqld dbg	| 154 MiB	| 8.50s | 2.96s	| 2.68s | 1.06s	| 0.68s clang dbg	| 1.</description>
     </item>
     
     <item>
       <title>kind (Kuberenetes in Docker) に deep dive してみる</title>
-      <link>https://south37.link/posts/20201230-kind/</link>
+      <link>https://www.south37.link/posts/20201230-kind/</link>
       <pubDate>Wed, 30 Dec 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://south37.link/posts/20201230-kind/</guid>
+      <guid>https://www.south37.link/posts/20201230-kind/</guid>
       <description>kuKubernetes の Install Tools というページでは、kubernetes を local で動かすための tool として kind が紹介されています。今日はこの kind について内部構造及び使い方を見てみます。
 kind とは kind は「Docker container の中で Kubernetes を動かすことが出来るツール」です。kind という命名は「Kubernetes in Docker」から来ていて、K-in-D という頭文字をとったものになっています。
 kind については KubeCon + CloudNativeCon で何度か紹介されているようです。例えば KubeCon + CloudNativeCon North America 2019 における以下の &amp;ldquo;Deep Dive: Kind&amp;rdquo; というトーク では、「kind とは何か？」について内部実装など含めて紹介されています。
@@ -51,10 +51,10 @@ Docker container として Node（をシミュレートする container）を動
     
     <item>
       <title>BigQuery の内部実装の変遷について</title>
-      <link>https://south37.link/posts/20201228-bigquery/</link>
+      <link>https://www.south37.link/posts/20201228-bigquery/</link>
       <pubDate>Mon, 28 Dec 2020 06:00:00 +0900</pubDate>
       
-      <guid>https://south37.link/posts/20201228-bigquery/</guid>
+      <guid>https://www.south37.link/posts/20201228-bigquery/</guid>
       <description>BigQuery（正確にはそのクエリエンジンである Dremel）の内部実装の変遷をまとめた以下のブログポストおよび論文を読みました。
 https://medium.com/google-cloud-jp/i-read-dremel-a-decade-of-interactive-sql-analysis-at-web-scale-ca2a015a522a
 https://research.google/pubs/pub49489/
@@ -67,10 +67,10 @@ BigQuery（正確にはそのクエリエンジンである Dremel）の内部�
     
     <item>
       <title>手を動かして学ぶコンテナ標準 - Container Runtime 編</title>
-      <link>https://south37.link/posts/20201211-container-3/</link>
+      <link>https://www.south37.link/posts/20201211-container-3/</link>
       <pubDate>Fri, 11 Dec 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://south37.link/posts/20201211-container-3/</guid>
+      <guid>https://www.south37.link/posts/20201211-container-3/</guid>
       <description>コンテナ標準化の現状と Kubernetes の立ち位置について というブログではコンテナ標準の現状についてまとめてみました。
 また、手を動かして学ぶコンテナ標準 - Container Image と Container Registry 編 というブログでは Container Image と Container Registry について手を動かして学んでみました。
 このブログでは、runc, containerd などの Container Runtime について、実際に手を動かして学んでみたいと思います。
@@ -82,10 +82,10 @@ vagrant@vagrant:~$ sudo apt update -y vagrant@vagrant:~$ sudo apt install -y run
     
     <item>
       <title>手を動かして学ぶコンテナ標準 - Container Image と Container Registry 編</title>
-      <link>https://south37.link/posts/20201210-container-2/</link>
+      <link>https://www.south37.link/posts/20201210-container-2/</link>
       <pubDate>Thu, 10 Dec 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://south37.link/posts/20201210-container-2/</guid>
+      <guid>https://www.south37.link/posts/20201210-container-2/</guid>
       <description>先日は、コンテナ標準化の現状と Kubernetes の立ち位置について において、各種ドキュメントをベースにコンテナ標準についてまとめてみました。
 このブログでは、実際に tool などに触れて手を動かすことで、コンテナ標準についてさらに理解を深めてみたいと思います。
 なお、基本的にこのブログ内のコマンドは、Linux で実行するものとします（自分は MacOS で Vagrant で Ubuntu VM を立てて実験してます）。
@@ -96,10 +96,10 @@ vagrant@vagrant:~/oci-playground$ skopeo copy docker://ruby:2.7.2-slim oci:ruby-
     
     <item>
       <title>コンテナ標準化の現状と Kubernetes との関係性について</title>
-      <link>https://south37.link/posts/20201207-container-1/</link>
+      <link>https://www.south37.link/posts/20201207-container-1/</link>
       <pubDate>Mon, 07 Dec 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://south37.link/posts/20201207-container-1/</guid>
+      <guid>https://www.south37.link/posts/20201207-container-1/</guid>
       <description>コンテナ標準化が進んでいる事は知りつつも、標準化された仕様の具体的な内容についてはあまり知らない事に気づいたので、この機会に調べてみました。個人向けメモとして残しておきます。
 余力があれば、後でもう少し詳細をまとめる予定です（docker image を OCI Image Format に変換して眺めてみたり、runc や containerd などを実際に動かしてみたり、containerd や CRI-O などの Container Runtime の実装に目を通してみたりしたので、その辺りについてもいつかまとめたいと思ってます）。
 追記: 手を動かして調べた内容は以下の2つのブログにまとめました。
